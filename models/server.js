@@ -6,9 +6,9 @@ class Server{
     constructor(){
         this.app = express()
         this.port = process.env.port
-        //this.rolesPath = "/api/roles"
+        this.rolesPath = "/api/roles"
         this.productosPath = "/api/productos"
-        //this.ventassPath = "/api/ventas"
+        this.ventassPath = "/api/ventas"
         this.middlewares()
         this.routes()
         this.dbConectar()
@@ -23,8 +23,8 @@ class Server{
     }
 
     routes(){
-        //this.app.use(this.rolesPath, require("../routes/roles"))
-        //this.app.use(this.ventassPath,require('../routes/ventas'))
+        this.app.use(this.rolesPath, require("../routes/roles"))
+        this.app.use(this.ventassPath,require('../routes/ventas'))
         this.app.use(this.productosPath, require('../routes/productos'))
     }
 
