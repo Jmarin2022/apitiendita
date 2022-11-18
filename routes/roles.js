@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 
-const { getRoles,putRoles,postRoles,patchRoles,deleteRoles } = require('../controllers/roles')
+const { getRoles,postRoles,putRoles,patchRoles,deleteRoles } = require('../controllers/roles')
 
 router.get('/', getRoles)
 router.post('/', postRoles)
